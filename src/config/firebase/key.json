@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pokemon-project-edaca",
+  "private_key_id": "c730c3cb7a8198c550b04c9543fda8ba7c7167fa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCy7CCYTTB2+8cF\ngVBzEF6/S7Luw06u860dGr2CE7dTHGOgjakydqDV9tE3KJCQG5QoPgwjMd9pEIVd\n/ulvVnSzLD8SwF9wQc+q0zgCbeiO8JTq7JlZtBoVGjEQvQf8UbdF78jVX9r60Xsw\nLRY4WTt80cI13bJ4qO3ArPgK4fOSNj7d4mxX/2Rvi75tKqN9Q0/prcyKY/vU7fi2\n5gZYpy1EtECA3V4dwm7WkBZr+m/6Sy8uadg6lRaWgso03ksjLyh+faqAv1qPh28e\nxaUY/YOemxT6pBTRiRdAP6iYT/UaSfj5VDYdkq5JSbPqSy8Mo+2gzA8ZPjSn409t\nW66nOOx1AgMBAAECggEAMd1/RBMXM8H9+LnOixL/5P6a8tI55qaBE8B1GoCWMjKS\nTZfNlQPc1WUBcAb9KzyUcRbB2Tk4E5cIJGc79cy5n4nwVjCJKMcesnRFgt/Q1a2V\nQ1gHcSmxrznqfMjCJf88PeCTL2yUohyp4YZfT/sGikYHg22zJM+n23AZfSb19ERz\nHiD5ZYPTtnZyn9B55HSBop6zlGR9UHBebnunM9UFTX0bWYbTjofBa22SY5Q3Cwpx\nlYYSLhPmuSM40kyYq2o76Ce9risCMBSFHsDw/6sBWskF//Ef/WTAM3iE+my15ULm\nRzylr12qF6vZiPNst2IS0SqPrm39Gwoh+EVN5F2DrQKBgQD8PrjLV5w5NcUeC3ZH\nLf+yi47kSbpvkuBMvPqmXCqtRmokOAcGJTOLXNyir89j3fWPOKq21PRr481yYCox\n3LIMPItNfOwiu/cAk7QVf7kJc/VhgKYt23Woo3jASd6Xv9BBoi9wlI9XQGsVXOMg\nYUcc/1yEv+zOVCPoROa2k+zxtwKBgQC1lfsd6w1VGd+dlr08m08FumWENLhExy4/\nGl1wyNWuXV4SRK+lBnUgytMzW6V3n3XPgJQl3a+8lPB9nEF2m17Gh/Jr9QdWj98g\nzq4p7tkvc20p/spd5IgbHeGSyEXwYV/HfBrD7+0+masfQ1GxT/Q2L7EJ6+omuQJQ\ni3YS8s1jMwKBgANDjICVEaBr4bER1OX24mgdBixOB+uJqv1TNKsSZjr3vkfZsb2S\nnagf+3rfa3+PT64avZrABqmeuPnR5LngcS1XWzYVd7i7VebcAmiEzpAgv/wS/hN5\n03vrIZTbX9X21WsD/jkmsvQeEUSlfwrcN19YronJMfc5f31x5spV/6rhAoGBAJHE\nCOZ2Zqh28aPuepBpWCEQBSgArh9ACSbMwk+kWKv09WwSyTDfIy0kxC/JFOYXEpp0\n6/gNomHu6bLbuU094fHa9cal1rMtIP+UCglNW/kUXoBEsSx4JK4n6YlLzaDuedWI\nEXBSbI9BCjY5cx20QiUxWZvOTpOxFmOT4D/LuwYzAoGBANmZtLZoMyvfZaBIRifz\n5jUHlfP+gBmHdPd0wBRVO6YnlGz8mWBWECcCUq8BCeA0Qkjh/Oc2vINqff2HhcHW\nNcDx/6Hcd54RGgZzNZM9HOlDhh/GEo38DQnicFPB9mqb+dyM8yRpJonct9vJ9pSn\nnKOFrXeM3R3LSrwKcT91SARc\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-nymwp@pokemon-project-edaca.iam.gserviceaccount.com",
+  "client_id": "105367322064203053282",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-nymwp%40pokemon-project-edaca.iam.gserviceaccount.com"
+}
