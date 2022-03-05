@@ -4,16 +4,17 @@ const ColorThief = require('colorthief');
 const rgbToHex = require("../utils/rgbToHex");
 const db = require("../config/firebase")
 
-const getPokemons = async (req, cb) => {
+const getPokemons = async (page, cb) => {
     try {
-        const page = req.query.page
         const params = {
             limit: 10,
             offset: page === 1 || !page ? 0 : (page - 1) * 10,
         }
 
         const favorites = []
-        await db.collection('favorites').get().then(item => item.docs.forEach(item => favorites.push(item.data())));
+        const resFavorites = await db.collection('favorites').get();
+        resFavorites.docs.forEach(item => favorites.push(item.data()))
+
         
         const data = await axios.get(`${API}/pokemon`, {params})
         const temp = data.data.results.map(item => axios.get(`${API}/pokemon/${item.name}`));
@@ -49,9 +50,8 @@ const getPokemons = async (req, cb) => {
     }
 }
 
-const getPokemon = async (req, cb) => {
+const getPokemon = async (name, cb) => {
     try {
-        const name = req.params.name
         const [data, species] = await Promise.all([axios.get(`${API}/pokemon/${name}`), axios.get(`${API}/pokemon-species/${name}`)])
         const bg_color_rgb = await ColorThief.getColor(data.data.sprites.other['official-artwork'].front_default)
         const favorite = await db.collection('favorites').where('id_pokemon', '==', data.data.id).get();
@@ -85,9 +85,8 @@ const getPokemon = async (req, cb) => {
     }
 }
 
-const addOrRemoveFavorite = async (req, cb) => {
+const addOrRemoveFavorite = async (id, cb) => {
     try {
-        const id = parseInt(req.params.id)
         const data = await db.collection('favorites').where('id_pokemon', '==', id).get();
         const isExist = data.size;
         if (isExist) {
@@ -104,15 +103,15 @@ const addOrRemoveFavorite = async (req, cb) => {
     }
 }
 
-const getFavorites = async (req, cb) => {
+const getFavorites = async (page, cb) => {
     try {
-        const page = req.query.page
         const params = {
             limit: 10,
             offset: page === 1 || !page ? 0 : (page - 1) * 10,
         }
         let temp = []
-        await db.collection('favorites').limit(params.limit).offset(params.offset).get().then(item => item.docs.forEach(item => temp.push(item.data())));
+        const favorites = await db.collection('favorites').limit(params.limit).offset(params.offset).get()
+        favorites.docs.forEach(item => temp.push(item.data()))
         
         temp = temp.map(item => axios.get(`${API}/pokemon/${item.id_pokemon}`));
         const response = await Promise.all(temp)

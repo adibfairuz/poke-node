@@ -2,7 +2,6 @@ var express = require('express');
 const { pokemons, pokemon, favorite, favorites } = require('../controllers/pokemon');
 var router = express.Router();
 
-/* GET users listing. */
 router.get('/favorite', favorites);
 router.post('/favorite/:id', favorite);
 router.get('/', pokemons);

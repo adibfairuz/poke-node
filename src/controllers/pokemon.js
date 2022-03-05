@@ -1,7 +1,8 @@
 const { getPokemons, getPokemon, addOrRemoveFavorite, getFavorites } = require('../services/pokemon')
 
 const pokemons = (req, res) => {
-    getPokemons(req, (ok, data) => {
+    const page = req.query.page
+    getPokemons(page, (ok, data) => {
         if (ok) {
             res.json({
                 data,
@@ -17,7 +18,8 @@ const pokemons = (req, res) => {
 }
 
 const pokemon = (req, res) => {
-    getPokemon(req, (ok, data) => {
+    const name = req.params.name
+    getPokemon(name, (ok, data) => {
         if (ok) {
             res.json({
                 data,
@@ -33,7 +35,8 @@ const pokemon = (req, res) => {
 }
 
 const favorite = (req, res) => {
-    addOrRemoveFavorite(req, (ok, data) => {
+    const id = parseInt(req.params.id)
+    addOrRemoveFavorite(id, (ok, data) => {
         if (ok) {
             res.json({
                 data,
@@ -49,7 +52,8 @@ const favorite = (req, res) => {
 }
 
 const favorites = (req, res) => {
-    getFavorites(req, (ok, data) => {
+    const page = req.query.page
+    getFavorites(page, (ok, data) => {
         if (ok) {
             if (data.results.length) {
                 res.json({
