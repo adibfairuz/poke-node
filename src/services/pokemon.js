@@ -135,12 +135,19 @@ const getFavorites = async (page, cb) => {
         })
 
         const count = (await db.collection('favorites').get()).size
-
-        cb(true, {
-            ...data.data,
-            results: list,
-            count,
-        })
+        
+        if (count) {
+            cb(true, {
+                ...data.data,
+                results: list,
+                count,
+            })
+        }else{
+            cb(false, {
+                data: {},
+                status: 404
+            })
+        }
 
     } catch (error) {
         cb(false, error)

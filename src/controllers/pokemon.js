@@ -9,7 +9,7 @@ const pokemons = (req, res) => {
                 ok: true
             })
         }else{
-            res.json({
+            res.status(data?.response?.status || 400).json({
                 data,
                 ok: false
             })
@@ -26,7 +26,7 @@ const pokemon = (req, res) => {
                 ok: true
             })
         }else{
-            res.json({
+            res.status(data?.response?.status || 400).json({
                 data,
                 ok: false
             })
@@ -43,7 +43,7 @@ const favorite = (req, res) => {
                 ok: true
             })
         }else{
-            res.json({
+            res.status(data?.response?.status || 400).json({
                 data,
                 ok: false
             })
@@ -55,20 +55,12 @@ const favorites = (req, res) => {
     const page = req.query.page
     getFavorites(page, (ok, data) => {
         if (ok) {
-            if (data.results.length) {
-                res.json({
-                    data,
-                    ok: true
-                })
-            } else {
-                res.status(404).json({
-                    data,
-                    ok: false
-                })
-                
-            }
-        }else{
             res.json({
+                data,
+                ok: true
+            })
+        }else{
+            res.status(data?.response?.status || data.status || 400).json({
                 data,
                 ok: false
             })
